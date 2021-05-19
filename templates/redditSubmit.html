@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 5 Reddit Posts</title>
+</head>
+<body>
+    <h1>Top 5 Reddit Posts</h1>
+    <p>Please enter a Reddit or a Subreddit URL:</p>
+    <form method="POST">
+        <input name="redditURL">
+        <input type="submit", value="Submit">
+    </form>
+    {% if posts %}
+        <h2>Following posts were found for your request:</h2>
+    {% endif %}
+    {% for post in posts %}
+        <p>{{post}}</p>
+    {% endfor %}
+
+    {% if error %}
+        <h2>{{error}}</h2>
+    {% endif %}
+</body>
+</html>
